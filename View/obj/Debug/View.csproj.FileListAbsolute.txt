@@ -1,0 +1,14 @@
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\View.exe.config
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\View.exe
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\View.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\Model.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\Model.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmPrincipal.resources
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.Properties.Resources.resources
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.csproj.GenerateResource.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.csproj.CopyComplete
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.exe
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmCadPessoa.resources

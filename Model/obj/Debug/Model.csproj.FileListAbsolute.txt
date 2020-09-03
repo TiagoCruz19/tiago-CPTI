@@ -1,0 +1,5 @@
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Model\bin\Debug\Model.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Model\bin\Debug\Model.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Model\obj\Debug\Model.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Model\obj\Debug\Model.pdb
