@@ -12,3 +12,4 @@ C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.exe
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.pdb
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmCadPessoa.resources
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmLogin.resources

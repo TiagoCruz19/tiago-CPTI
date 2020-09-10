@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class FrmCadPessoa : Form
+    public partial class FrmLogin : Form
     {
-        public FrmCadPessoa()
+        public FrmLogin()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
