@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace View
 {
@@ -52,7 +53,23 @@ namespace View
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             relogio.Enabled = true;
-            //relogio.Interval = 1000;
+
+            this.Hide();
+
+            FrmLogin flogin = new FrmLogin();
+
+            if (flogin.ShowDialog() == DialogResult.OK)
+            {
+                Usuario user = (Usuario)flogin.Tag;
+
+                lblDadosUsuario.Text = "Usuário logado: " + user.Login;
+
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
