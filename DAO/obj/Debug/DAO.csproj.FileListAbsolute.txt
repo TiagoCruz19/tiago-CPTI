@@ -1,0 +1,9 @@
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\bin\Debug\DAO.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\bin\Debug\DAO.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\bin\Debug\Model.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\bin\Debug\Model.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.pdb

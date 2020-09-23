@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Control;
 
 namespace View
 {
@@ -30,7 +31,25 @@ namespace View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Pessoa p = CarregarPessoaDoForm();
 
+                PessoaCtrl control = new PessoaCtrl();
+
+                if(control.SalvarPessoaNoArquivo(p))
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("Cadastro NÃO efetuado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private Pessoa CarregarPessoaDoForm()
@@ -43,6 +62,8 @@ namespace View
                 p.Nome = txbNome.Text;
 
                 p.Tel = mtbTel.Text;
+
+                p.Email = txbEmail.Text;
 
                 p.TipoEndereco = ltbTipoLogr.SelectedIndex;
 

@@ -1,0 +1,11 @@
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\Control.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\Control.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\DAO.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\Model.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\DAO.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\Model.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.csprojAssemblyReference.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.csproj.CoreCompileInputs.cache
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.csproj.CopyComplete
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.dll
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.pdb

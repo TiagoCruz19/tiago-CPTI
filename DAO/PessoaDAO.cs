@@ -15,7 +15,7 @@ namespace DAO
 
         #region "Operações com Arquivos"
         
-        public bool SalvarPessoaNoArquivo(Pessoa _o)
+        public bool SalvarPessoaNoArquivo(Pessoa _obj)
         {
             bool resultado = false;
             try
@@ -24,12 +24,24 @@ namespace DAO
 
                 StreamWriter escritor = new StreamWriter(fullPath, true);
 
-                escritor.Write(_o.Cpf + ";");
-                escritor.Write(_o.Nome + ";");
+                escritor.Write(_obj.Cpf + ";");
+                escritor.Write(_obj.Nome + ";");
+                escritor.Write(_obj.Tel + ";");
+                escritor.Write(_obj.Email + ";");
+                escritor.Write(_obj.TipoEndereco + ";");
+                escritor.Write(_obj.Logradouro + ";");
+                escritor.Write(_obj.Estado + ";");
+                escritor.Write(_obj.Cidade + ";");
+                escritor.Write(_obj.Genero + ";");
+                escritor.Write(_obj.EstadoCivil + ";");
+                escritor.Write(_obj.Animais + ";");
+                escritor.Write(_obj.Filhos + ";");
+                escritor.Write(_obj.Fumante + ";");
+
+                escritor.WriteLine();
 
                 escritor.Close();
                 resultado = true;
-
             }
             catch (Exception ex)
             {
@@ -42,7 +54,8 @@ namespace DAO
         #endregion
 
         #region "Operações com Banco de Dados"
-
+       
+       
         #endregion
     }
 }
