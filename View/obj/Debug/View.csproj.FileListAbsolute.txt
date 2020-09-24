@@ -17,3 +17,4 @@ C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\Cont
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\DAO.dll
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\Control.pdb
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\DAO.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmReadAll.resources

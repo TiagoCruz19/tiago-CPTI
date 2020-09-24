@@ -71,5 +71,19 @@ namespace View
                 this.Close();
             }
         }
+
+        private void mniListarPessoas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmReadAll f = new FrmReadAll();
+
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO EXIBIR FORM LISTAR PESSOAS: " + ex.Message);
+            }
+        }
     }
 }

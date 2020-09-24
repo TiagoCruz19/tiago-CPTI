@@ -32,19 +32,18 @@
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.mniCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.mniNovo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mniExcluir = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniListarPessoas = new System.Windows.Forms.ToolStripMenuItem();
             this.mniConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.mniLogotipo = new System.Windows.Forms.ToolStripMenuItem();
             this.barraTarefas = new System.Windows.Forms.ToolStrip();
-            this.btiNovo = new System.Windows.Forms.ToolStripButton();
-            this.btiLogo = new System.Windows.Forms.ToolStripButton();
             this.barraStatus = new System.Windows.Forms.StatusStrip();
             this.bsiDataHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pcbLogoPrincipal = new System.Windows.Forms.PictureBox();
             this.relogio = new System.Windows.Forms.Timer(this.components);
             this.lblDadosUsuario = new System.Windows.Forms.Label();
+            this.pcbLogoPrincipal = new System.Windows.Forms.PictureBox();
+            this.btiNovo = new System.Windows.Forms.ToolStripButton();
+            this.btiLogo = new System.Windows.Forms.ToolStripButton();
             this.menuPrincipal.SuspendLayout();
             this.barraTarefas.SuspendLayout();
             this.barraStatus.SuspendLayout();
@@ -66,9 +65,8 @@
             // 
             this.mniCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniNovo,
-            this.mniAlterar,
             this.toolStripSeparator1,
-            this.mniExcluir});
+            this.mniListarPessoas});
             this.mniCadastro.Name = "mniCadastro";
             this.mniCadastro.Size = new System.Drawing.Size(66, 20);
             this.mniCadastro.Text = "&Cadastro";
@@ -78,28 +76,22 @@
             // 
             this.mniNovo.Name = "mniNovo";
             this.mniNovo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.mniNovo.Size = new System.Drawing.Size(151, 22);
+            this.mniNovo.Size = new System.Drawing.Size(186, 22);
             this.mniNovo.Text = "Novo";
             this.mniNovo.Click += new System.EventHandler(this.abrir_janela_novo);
-            // 
-            // mniAlterar
-            // 
-            this.mniAlterar.Name = "mniAlterar";
-            this.mniAlterar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.mniAlterar.Size = new System.Drawing.Size(151, 22);
-            this.mniAlterar.Text = "Alterar";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
             // 
-            // mniExcluir
+            // mniListarPessoas
             // 
-            this.mniExcluir.Name = "mniExcluir";
-            this.mniExcluir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mniExcluir.Size = new System.Drawing.Size(151, 22);
-            this.mniExcluir.Text = "Excluir";
+            this.mniListarPessoas.Name = "mniListarPessoas";
+            this.mniListarPessoas.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.mniListarPessoas.Size = new System.Drawing.Size(186, 22);
+            this.mniListarPessoas.Text = "Listar Pessoas";
+            this.mniListarPessoas.Click += new System.EventHandler(this.mniListarPessoas_Click);
             // 
             // mniConfig
             // 
@@ -112,7 +104,7 @@
             // mniLogotipo
             // 
             this.mniLogotipo.Name = "mniLogotipo";
-            this.mniLogotipo.Size = new System.Drawing.Size(122, 22);
+            this.mniLogotipo.Size = new System.Drawing.Size(180, 22);
             this.mniLogotipo.Text = "Logotipo";
             this.mniLogotipo.Click += new System.EventHandler(this.mniLogotipo_Click);
             // 
@@ -128,6 +120,47 @@
             this.barraTarefas.Size = new System.Drawing.Size(45, 529);
             this.barraTarefas.TabIndex = 1;
             this.barraTarefas.Text = "toolStrip1";
+            // 
+            // barraStatus
+            // 
+            this.barraStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bsiDataHora});
+            this.barraStatus.Location = new System.Drawing.Point(45, 531);
+            this.barraStatus.Name = "barraStatus";
+            this.barraStatus.Size = new System.Drawing.Size(1098, 22);
+            this.barraStatus.TabIndex = 2;
+            this.barraStatus.Text = "statusStrip1";
+            // 
+            // bsiDataHora
+            // 
+            this.bsiDataHora.Name = "bsiDataHora";
+            this.bsiDataHora.Size = new System.Drawing.Size(95, 17);
+            this.bsiDataHora.Text = "01/01/1999 01:00";
+            // 
+            // relogio
+            // 
+            this.relogio.Interval = 1000;
+            this.relogio.Tick += new System.EventHandler(this.relogio_Tick);
+            // 
+            // lblDadosUsuario
+            // 
+            this.lblDadosUsuario.AutoSize = true;
+            this.lblDadosUsuario.Location = new System.Drawing.Point(981, 534);
+            this.lblDadosUsuario.Name = "lblDadosUsuario";
+            this.lblDadosUsuario.Size = new System.Drawing.Size(16, 13);
+            this.lblDadosUsuario.TabIndex = 4;
+            this.lblDadosUsuario.Text = "...";
+            // 
+            // pcbLogoPrincipal
+            // 
+            this.pcbLogoPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbLogoPrincipal.Image = global::View.Properties.Resources.logo_lasalle;
+            this.pcbLogoPrincipal.Location = new System.Drawing.Point(45, 24);
+            this.pcbLogoPrincipal.Name = "pcbLogoPrincipal";
+            this.pcbLogoPrincipal.Size = new System.Drawing.Size(1098, 507);
+            this.pcbLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbLogoPrincipal.TabIndex = 3;
+            this.pcbLogoPrincipal.TabStop = false;
             // 
             // btiNovo
             // 
@@ -149,47 +182,6 @@
             this.btiLogo.Size = new System.Drawing.Size(42, 44);
             this.btiLogo.Text = "Alterar Logo";
             this.btiLogo.ToolTipText = "Alteração da logo do sistema";
-            // 
-            // barraStatus
-            // 
-            this.barraStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bsiDataHora});
-            this.barraStatus.Location = new System.Drawing.Point(45, 531);
-            this.barraStatus.Name = "barraStatus";
-            this.barraStatus.Size = new System.Drawing.Size(1098, 22);
-            this.barraStatus.TabIndex = 2;
-            this.barraStatus.Text = "statusStrip1";
-            // 
-            // bsiDataHora
-            // 
-            this.bsiDataHora.Name = "bsiDataHora";
-            this.bsiDataHora.Size = new System.Drawing.Size(95, 17);
-            this.bsiDataHora.Text = "01/01/1999 01:00";
-            // 
-            // pcbLogoPrincipal
-            // 
-            this.pcbLogoPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcbLogoPrincipal.Image = global::View.Properties.Resources.logo_lasalle;
-            this.pcbLogoPrincipal.Location = new System.Drawing.Point(45, 24);
-            this.pcbLogoPrincipal.Name = "pcbLogoPrincipal";
-            this.pcbLogoPrincipal.Size = new System.Drawing.Size(1098, 507);
-            this.pcbLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbLogoPrincipal.TabIndex = 3;
-            this.pcbLogoPrincipal.TabStop = false;
-            // 
-            // relogio
-            // 
-            this.relogio.Interval = 1000;
-            this.relogio.Tick += new System.EventHandler(this.relogio_Tick);
-            // 
-            // lblDadosUsuario
-            // 
-            this.lblDadosUsuario.AutoSize = true;
-            this.lblDadosUsuario.Location = new System.Drawing.Point(981, 534);
-            this.lblDadosUsuario.Name = "lblDadosUsuario";
-            this.lblDadosUsuario.Size = new System.Drawing.Size(16, 13);
-            this.lblDadosUsuario.TabIndex = 4;
-            this.lblDadosUsuario.Text = "...";
             // 
             // FrmPrincipal
             // 
@@ -224,9 +216,8 @@
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mniCadastro;
         private System.Windows.Forms.ToolStripMenuItem mniNovo;
-        private System.Windows.Forms.ToolStripMenuItem mniAlterar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem mniExcluir;
+        private System.Windows.Forms.ToolStripMenuItem mniListarPessoas;
         private System.Windows.Forms.ToolStripMenuItem mniConfig;
         private System.Windows.Forms.ToolStripMenuItem mniLogotipo;
         private System.Windows.Forms.ToolStrip barraTarefas;
