@@ -19,16 +19,6 @@ namespace View
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -169,6 +159,34 @@ namespace View
                 MessageBox.Show("ERRO AO CARREGAR FORM: " + ex.Message);
             }
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmCadPessoa_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.Tag != null)
+                {
+                    btnAlterar.Visible = true;
+
+                    btnSalvar.Visible = false;
+
+                    mtbCpf.Enabled = false;
+
+                    Pessoa p = (Pessoa)this.Tag;
+
+                    CarregarFormDePessoa(p);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR FORM");
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Usuario
+    public class Usuario : Pessoa
     {
         //Declarando atributo Explicitamente
         private String login;

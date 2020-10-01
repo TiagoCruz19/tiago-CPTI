@@ -65,6 +65,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.gpbDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbEndereco.SuspendLayout();
@@ -266,7 +267,6 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Tipo Logr:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // ltbTipoLogr
             // 
@@ -347,7 +347,6 @@
             this.gbpEstadoCivil.TabIndex = 10;
             this.gbpEstadoCivil.TabStop = false;
             this.gbpEstadoCivil.Text = "Estado Civil";
-            this.gbpEstadoCivil.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rdbCasado
             // 
@@ -450,12 +449,24 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(410, 576);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Visible = false;
             // 
             // FrmCadPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 632);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbDadosAdicionais);
@@ -465,6 +476,7 @@
             this.Name = "FrmCadPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário para Cadastro de Pessoas";
+            this.Load += new System.EventHandler(this.FrmCadPessoa_Load);
             this.gpbDadosPrincipais.ResumeLayout(false);
             this.gpbDadosPrincipais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -519,5 +531,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

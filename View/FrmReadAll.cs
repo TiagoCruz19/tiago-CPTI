@@ -14,6 +14,7 @@ namespace View
 {
     public partial class FrmReadAll : Form
     {
+        private Dictionary<Int64, Pessoa> tabelaPessoas;
         public FrmReadAll()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace View
                 //Chamada para o controller (busca dos dados)
                 PessoaCtrl control = new PessoaCtrl();
 
-                Dictionary<Int64, Pessoa> tabelaPessoas = control.ListarPessoasDoArquivo();
+                this.tabelaPessoas = control.ListarPessoasDoArquivo();
 
                 foreach (Pessoa p in tabelaPessoas.Values)
                 {
@@ -49,6 +50,19 @@ namespace View
             {
                 MessageBox.Show("ERRO AO CARREGAR GRID: " + ex.Message);
             }
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Int64 cpf = Convert.ToInt64(dgvDados.SelectedRows[0].Cells[0].Value);
+
+            Pessoa p = tabelaPessoas[cpf];
+
+            FrmCadPessoa fp = new FrmCadPessoa();
+
+            fp.Tag = p;
+
+            fp.ShowDialog();
         }
     }
 }

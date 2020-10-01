@@ -73,5 +73,19 @@ namespace View
                 return false;
             }
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    break;
+                case Keys.Enter:
+                    this.btnLogin_Click(null, null);
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

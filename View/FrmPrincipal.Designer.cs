@@ -104,7 +104,7 @@
             // mniLogotipo
             // 
             this.mniLogotipo.Name = "mniLogotipo";
-            this.mniLogotipo.Size = new System.Drawing.Size(180, 22);
+            this.mniLogotipo.Size = new System.Drawing.Size(122, 22);
             this.mniLogotipo.Text = "Logotipo";
             this.mniLogotipo.Click += new System.EventHandler(this.mniLogotipo_Click);
             // 

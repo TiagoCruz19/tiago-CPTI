@@ -33,5 +33,7 @@ namespace Model
         public Boolean Animais { get; set; }
 
         public Boolean Fumante { get; set; }
+
+        public List<Endereco> Enderecos { get; set; }
     }
 }
