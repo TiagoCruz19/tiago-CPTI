@@ -18,3 +18,4 @@ C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\DAO.
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\Control.pdb
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\bin\Debug\DAO.pdb
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.FrmReadAll.resources
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\View\obj\Debug\View.Form1.resources

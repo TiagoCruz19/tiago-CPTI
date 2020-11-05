@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlServerCe;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,11 @@ namespace DAO
 {
     public class PessoaDAO
     {
+        #region "Operações com Arquivos"
+
         String dir;
         String nomeArquivo;
         String fullPath = @"C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\bd.txt";
-
-        #region "Operações com Arquivos"
 
         public bool SalvarPessoaNoArquivo(Pessoa _obj)
         {
@@ -101,7 +102,136 @@ namespace DAO
 
         #region "Operações com Banco de Dados"
        
+        public Dictionary<Int64, Pessoa> GetAll()
+        {
+            Dictionary<Int64, Pessoa> mapaPessoas = new Dictionary<Int64, Pessoa>();
+            try
+            {
+                String SQL = "SELECT * FROM pessoa;";
+
+                SqlCeDataReader data = BD.ExecutarSelect(SQL);
+
+                while (data.Read())
+                {
+                    Pessoa p = new Pessoa();
+
+                    p.Cpf = data.GetInt64(0);
+                    p.Nome = data.GetString(1);
+                    p.Tel = data.GetString(2);
+                    p.Email = data.GetString(3);
+                    p.TipoEndereco = data.GetInt32(4);
+                    p.Logradouro = data.GetString(5);
+                    p.Cidade = data.GetInt32(6);
+                    p.Estado = data.GetInt32(7);
+                    p.Genero = data.GetString(8);
+                    p.EstadoCivil = data.GetString(9);
+                    p.Filhos = data.GetBoolean(10);
+                    p.Animais = data.GetBoolean(11);
+                    p.Fumante = data.GetBoolean(12);
+
+                    mapaPessoas.Add(p.Cpf, p);
+                }
+
+                data.Close();
+                BD.FecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return mapaPessoas;
+        }
        
+        public Pessoa GetForID(Int64 _cpf)
+        {
+            Pessoa p = null;
+            try
+            {
+                String SQL = String.Format("SELECT * FROM pessoa WHERE id = {0};", _cpf);
+
+                SqlCeDataReader data = BD.ExecutarSelect(SQL);
+
+                if (data.Read())
+                {
+                    p = new Pessoa();
+
+                    p.Cpf = data.GetInt64(0);
+                    p.Nome = data.GetString(1);
+                    p.Tel = data.GetString(2);
+                    p.Email = data.GetString(3);
+                    p.TipoEndereco = data.GetInt32(4);
+                    p.Logradouro = data.GetString(5);
+                    p.Cidade = data.GetInt32(6);
+                    p.Estado = data.GetInt32(7);
+                    p.Genero = data.GetString(8);
+                    p.EstadoCivil = data.GetString(9);
+                    p.Filhos = data.GetBoolean(10);
+                    p.Animais = data.GetBoolean(11);
+                    p.Fumante = data.GetBoolean(12);
+                }
+
+                data.Close();
+                BD.FecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return p;
+        }
+
+        public Boolean Insert(Pessoa _obj)
+        {
+            Boolean resultado = false;
+            try
+            {
+                String SQL = String.Format("INSERT INTO pessoa (" +
+                    "cpf, " +
+                    "nome, " +
+                    "tel, " +
+                    "email, " +
+                    "tipo_endereco, " +
+                    "logradouro, " +
+                    "estado, " +
+                    "cidade, " +
+                    "genero, " +
+                    "est_civil, " +
+                    "filhos, " +
+                    "animais, " +
+                    "fumante " +
+                    "VALUES ({0}, '{1}', '{2}', '{3}', {4}, '{5}', {6}, {7}, '{8}', '{9}', '{10}', '{11}', '{12}')",
+                    _obj.Cpf,
+                    _obj.Nome,
+                    _obj.Tel,
+                    _obj.Email,
+                    _obj.TipoEndereco,
+                    _obj.Logradouro,
+                    _obj.Cidade,
+                    _obj.Estado,
+                    _obj.Genero,
+                    _obj.EstadoCivil,
+                    _obj.Filhos,
+                    _obj.Animais,
+                    _obj.Fumante
+                    );
+
+                int linhasAfetadas = BD.ExecutarIDU(SQL);
+
+                if (linhasAfetadas > 0)
+                {
+                    resultado = true;
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
         #endregion
     }
 }
