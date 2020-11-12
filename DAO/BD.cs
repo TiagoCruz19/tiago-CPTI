@@ -10,7 +10,7 @@ namespace DAO
 {
     public static class BD
     {
-        private static String strConexao;
+        private static String strConexao = @"Data Source=C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\app_bd.sdf;Password=123";
         private static SqlCeConnection conexao;
 
         public static void AbrirConexao()

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.colCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,7 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbPesquisa = new System.Windows.Forms.TextBox();
             this.btnSair = new System.Windows.Forms.Button();
+            this.menuDeletar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.imDelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
+            this.menuDeletar.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDados
@@ -47,6 +51,7 @@
             this.colCpf,
             this.colNome,
             this.colEmail});
+            this.dgvDados.ContextMenuStrip = this.menuDeletar;
             this.dgvDados.Location = new System.Drawing.Point(12, 50);
             this.dgvDados.MultiSelect = false;
             this.dgvDados.Name = "dgvDados";
@@ -104,6 +109,20 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // menuDeletar
+            // 
+            this.menuDeletar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imDelete});
+            this.menuDeletar.Name = "menuDeletar";
+            this.menuDeletar.Size = new System.Drawing.Size(181, 48);
+            // 
+            // imDelete
+            // 
+            this.imDelete.Name = "imDelete";
+            this.imDelete.Size = new System.Drawing.Size(180, 22);
+            this.imDelete.Text = "Deletar";
+            this.imDelete.Click += new System.EventHandler(this.imDelete_Click);
+            // 
             // FrmReadAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +138,7 @@
             this.Text = "Pessoas Cadastradas no DB";
             this.Load += new System.EventHandler(this.FrmReadAll_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
+            this.menuDeletar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +153,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbPesquisa;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.ContextMenuStrip menuDeletar;
+        private System.Windows.Forms.ToolStripMenuItem imDelete;
     }
 }

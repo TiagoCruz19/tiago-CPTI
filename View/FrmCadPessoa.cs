@@ -27,7 +27,7 @@ namespace View
 
                 PessoaCtrl control = new PessoaCtrl();
 
-                if(control.SalvarPessoaNoArquivo(p))
+                if((Boolean)control.BD('i', p))
                 {
                     MessageBox.Show("Cadastro efetuado com sucesso!!!");
                 }
@@ -186,6 +186,29 @@ namespace View
             catch (Exception ex)
             {
                 MessageBox.Show("ERRO AO CARREGAR FORM");
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pessoa p = CarregarPessoaDoForm();
+
+                PessoaCtrl control = new PessoaCtrl();
+
+                if ((Boolean)control.BD('u', p))
+                {
+                    MessageBox.Show("Cadastro alterado com sucesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("Cadastro NÃO alterado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

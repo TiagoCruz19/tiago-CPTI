@@ -194,13 +194,13 @@ namespace DAO
                     "email, " +
                     "tipo_endereco, " +
                     "logradouro, " +
-                    "estado, " +
                     "cidade, " +
+                    "estado, " +
                     "genero, " +
-                    "est_civil, " +
+                    "estado_civil, " +
                     "filhos, " +
                     "animais, " +
-                    "fumante " +
+                    "fumante) " +
                     "VALUES ({0}, '{1}', '{2}', '{3}', {4}, '{5}', {6}, {7}, '{8}', '{9}', '{10}', '{11}', '{12}')",
                     _obj.Cpf,
                     _obj.Nome,
@@ -232,6 +232,77 @@ namespace DAO
             }
 
         }
+
+        public Boolean Delete(Int64 _cpf)
+        {
+            Boolean resultado = false;
+            try
+            {
+                String SQL = "DELETE FROM pessoa WHERE cpf = " + _cpf.ToString();
+
+                int linhasAfetadas = BD.ExecutarIDU(SQL);
+
+                if (linhasAfetadas > 0)
+                {
+                    resultado = true;
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Boolean Update(Pessoa _obj)
+        {
+            Boolean resultado = false;
+            try
+            {
+                String SQL = String.Format("UPDATE pessoa SET " +
+                    "nome = '{0}', " +
+                    "tel = '{1}', " +
+                    "email = '{2}', " +
+                    "tipo_endereco = {3}, " +
+                    "logradouro = '{4}', " +
+                    "cidade = {5}, " +
+                    "estado = {6}, " +
+                    "genero = '{7}', " +
+                    "estado_civil = '{8}', " +
+                    "filhos = '{9}', " +
+                    "animais = '{10}', " +
+                    "fumante = '{11}' WHERE cpf = {12}",
+                    _obj.Nome,
+                    _obj.Tel,
+                    _obj.Email,
+                    _obj.TipoEndereco,
+                    _obj.Logradouro,
+                    _obj.Cidade,
+                    _obj.Estado,
+                    _obj.Genero,
+                    _obj.EstadoCivil,
+                    _obj.Filhos,
+                    _obj.Animais,
+                    _obj.Fumante,
+                    _obj.Cpf
+                    );
+
+                int linhasAfetadas = BD.ExecutarIDU(SQL);
+
+                if (linhasAfetadas > 0)
+                {
+                    resultado = true;
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         #endregion
     }
 }

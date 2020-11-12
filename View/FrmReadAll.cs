@@ -39,7 +39,7 @@ namespace View
                 //Chamada para o controller (busca dos dados)
                 PessoaCtrl control = new PessoaCtrl();
 
-                this.tabelaPessoas = control.ListarPessoasDoArquivo();
+                this.tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('t', null);
 
                 foreach (Pessoa p in tabelaPessoas.Values)
                 {
@@ -63,6 +63,28 @@ namespace View
             fp.Tag = p;
 
             fp.ShowDialog();
+        }
+
+        private void imDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Int64 cpf = Convert.ToInt64(dgvDados.SelectedRows[0].Cells[0].Value);
+
+                PessoaCtrl control = new PessoaCtrl();
+
+                if ((Boolean)control.BD('d', cpf))
+                {
+                    MessageBox.Show("Pessoa deletada com sucesso!");
+
+                    CarregarGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO SELECIONAR UM CADASTRO: " + ex.Message);
+            }
+           
         }
     }
 }

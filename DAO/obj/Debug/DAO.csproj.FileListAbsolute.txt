@@ -7,3 +7,4 @@ C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.c
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.dll
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\obj\Debug\DAO.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\DAO\bin\Debug\System.Data.SqlServerCe.dll

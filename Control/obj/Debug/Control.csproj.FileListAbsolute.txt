@@ -9,3 +9,4 @@ C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\C
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.csproj.CopyComplete
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.dll
 C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\obj\Debug\Control.pdb
+C:\Users\Thiago G Ramos\source\repos\20202_aula_exemplo_CPTI\Control\bin\Debug\System.Data.SqlServerCe.dll
