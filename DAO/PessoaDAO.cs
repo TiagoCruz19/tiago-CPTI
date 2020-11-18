@@ -303,6 +303,58 @@ namespace DAO
             }
         }
 
+        //Adicionado para implementar as opções de filtro
+        public Dictionary<Int64, Pessoa> BuscarListaFiltrada(String _filtros)
+        {
+            Dictionary<Int64, Pessoa> mapaPessoas = new Dictionary<Int64, Pessoa>();
+            try
+            {
+                String SQL = "SELECT * FROM pessoa WHERE ";
+
+                Int64 saida;
+                if (Int64.TryParse(_filtros, out saida))
+                {
+                    SQL += String.Format("cpf = {0}", _filtros);
+                }
+                else
+                {
+                    SQL += String.Format("nome LIKE '%{0}%'", _filtros);
+                }
+
+                SqlCeDataReader data = BD.ExecutarSelect(SQL);
+
+                while (data.Read())
+                {
+                    Pessoa p = new Pessoa();
+
+                    p.Cpf = data.GetInt64(0);
+                    p.Nome = data.GetString(1);
+                    p.Tel = data.GetString(2);
+                    p.Email = data.GetString(3);
+                    p.TipoEndereco = data.GetInt32(4);
+                    p.Logradouro = data.GetString(5);
+                    p.Cidade = data.GetInt32(6);
+                    p.Estado = data.GetInt32(7);
+                    p.Genero = data.GetString(8);
+                    p.EstadoCivil = data.GetString(9);
+                    p.Filhos = data.GetBoolean(10);
+                    p.Animais = data.GetBoolean(11);
+                    p.Fumante = data.GetBoolean(12);
+
+                    mapaPessoas.Add(p.Cpf, p);
+                }
+
+                data.Close();
+                BD.FecharConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return mapaPessoas;
+        }
+
         #endregion
     }
 }

@@ -62,6 +62,8 @@ namespace Control
                         return dao.Delete((Int64)_param);
                     case 'u':
                         return dao.Update((Pessoa)_param);
+                    case 'f'://Adicionado para implementar as opções de filtro
+                        return dao.BuscarListaFiltrada((String)_param);
                 }
 
                 return null;

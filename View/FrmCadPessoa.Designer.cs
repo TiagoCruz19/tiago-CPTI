@@ -215,13 +215,6 @@
             // cmbCidade
             // 
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Items.AddRange(new object[] {
-            "Araruama",
-            "Niterói",
-            "Rio de Janeiro",
-            "São Paulo",
-            "Belo Horizonte",
-            "Vitória"});
             this.cmbCidade.Location = new System.Drawing.Point(350, 106);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(188, 21);
@@ -230,15 +223,11 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "RJ",
-            "SP",
-            "MG",
-            "ES"});
             this.cmbEstado.Location = new System.Drawing.Point(350, 45);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(188, 21);
             this.cmbEstado.TabIndex = 11;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label6
             // 

@@ -27,10 +27,10 @@ namespace View
 
         private void FrmReadAll_Load(object sender, EventArgs e)
         {
-            CarregarGrid();
+            CarregarGrid("");
         }
 
-        private void CarregarGrid()
+        private void CarregarGrid(String _filtro)
         {
             try
             {
@@ -39,7 +39,15 @@ namespace View
                 //Chamada para o controller (busca dos dados)
                 PessoaCtrl control = new PessoaCtrl();
 
-                this.tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('t', null);
+                //Alterado para atender a operação de Filtro por CPF e Nome
+                if (_filtro.Equals(""))
+                {
+                    this.tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('t', null);
+                }
+                else
+                {
+                    this.tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('f', _filtro);
+                }
 
                 foreach (Pessoa p in tabelaPessoas.Values)
                 {
@@ -77,7 +85,7 @@ namespace View
                 {
                     MessageBox.Show("Pessoa deletada com sucesso!");
 
-                    CarregarGrid();
+                    CarregarGrid("");
                 }
             }
             catch (Exception ex)
@@ -85,6 +93,19 @@ namespace View
                 MessageBox.Show("ERRO AO SELECIONAR UM CADASTRO: " + ex.Message);
             }
            
+        }
+
+        //Adicionado para implementar as opções de filtro
+        private void txbPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregarGrid(txbPesquisa.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO FILTRAR O DATA GRID: " + ex.Message);
+            }
         }
     }
 }

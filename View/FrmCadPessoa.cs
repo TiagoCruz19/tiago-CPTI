@@ -170,6 +170,9 @@ namespace View
         {
             try
             {
+
+                CarregarComboEstados();
+
                 if (this.Tag != null)
                 {
                     btnAlterar.Visible = true;
@@ -188,6 +191,46 @@ namespace View
                 MessageBox.Show("ERRO AO CARREGAR FORM");
             }
         }
+
+        private void CarregarComboEstados()
+        {
+            try
+            {
+                EstadoCtrl controlEstado = new EstadoCtrl();
+
+                Dictionary<Int64, Estado> mapaEstados = (Dictionary<Int64, Estado>)controlEstado.BD('t', null);
+
+                cmbEstado.DisplayMember = "descricao";
+                cmbEstado.ValueMember = "id";
+
+                cmbEstado.DataSource = mapaEstados.Values.ToList<Estado>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR COMBO DE ESTADOS: " + ex.Message);
+            }
+        }
+
+        /*
+        private void CarregarComboCidade()
+        {
+            try
+            {
+                CidadeCtrl controlCidade = new CidadeCtrl();
+
+                Dictionary<Int64, Cidade> mapaCidades = (Dictionary<Int64, Cidade>)controlCidade.BD('t', null);
+
+                cmbCidade.DisplayMember = "descricao";
+                cmbCidade.ValueMember = "id";
+
+                cmbCidade.DataSource = mapaCidades.Values.ToList<Cidade>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR COMBO DE CIDADES: " + ex.Message);
+            }
+        }
+        */
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -209,6 +252,27 @@ namespace View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Int64 idEstado = (Int64)cmbEstado.SelectedValue;
+
+                CidadeCtrl controlCidade = new CidadeCtrl();
+
+                Dictionary<Int64, Cidade> mapaCidades = (Dictionary<Int64, Cidade>)controlCidade.BD('f', idEstado);
+
+                cmbCidade.DisplayMember = "descricao";
+                cmbCidade.ValueMember = "id";
+
+                cmbCidade.DataSource = mapaCidades.Values.ToList<Cidade>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR COMBO DE CIDADES: " + ex.Message);
             }
         }
     }
